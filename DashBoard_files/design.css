@@ -1,0 +1,104 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'sidebar header'
+                        'sidebar content';
+}
+
+.header {
+    background-color: white;
+    padding: 1.5rem 3rem;
+    grid-area: header;
+    z-index: 3;
+    border: 2px solid black;
+}
+
+.upper-header {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2rem;
+}
+
+.upper-left {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+}
+
+.account {
+    display: flex;
+    gap: 8px;
+}
+
+.lower-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile {
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.sidebar {
+    display: grid;
+    grid-area: sidebar;
+    padding: 1.5rem 3rem;
+    border: 2px solid black;
+    background-color: maroon;
+    color: white;
+    height: fit-content;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    margin-bottom: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+aside > ul {
+    font-size: 20px;
+    display: grid;
+    gap: 15px;
+    padding-bottom: 100px;
+}
+
+.nav-link {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    font-weight: bold;
+    padding: 6px;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto ;
+  
+}
