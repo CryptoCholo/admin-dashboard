@@ -43,8 +43,8 @@ body {
 }
 
 .upper-header {
-    display: grid;
-    grid-template-columns: 1fr max-content;
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 2rem;
 }
 
@@ -68,10 +68,8 @@ body {
     padding: 0.75em 2em;
     margin-left: 1.25rem;
     border-radius: 99em;
-    width: 450px;
+    width: 300px;
 }
-
-
 
 .account {
     display: flex;
@@ -141,7 +139,6 @@ button {
     display: grid;
     grid-area: sidebar;
     padding: 1.5rem 2rem;
-    border: 0px solid black;
     background-color: maroon;
     color: white;
     height: fit-content;
@@ -163,7 +160,10 @@ aside > ul {
     font-size: 20px;
     display: grid;
     gap: 15px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
+}
+.nav-bottom {
+    margin-bottom: 140px;
 }
 
 .nav-link {
@@ -174,7 +174,7 @@ aside > ul {
 }
 
 main {
-    background-color: rgb(226, 221, 221);
+    background-color: rgb(248, 242, 242);
     grid-area: mycontent;
     padding: 1.5rem;
     display: grid;
@@ -184,7 +184,7 @@ main {
                          'projects trending';
     gap: 1.3rem;
     overflow: fit-content;
-    height: 86vh;
+    height: max-content;
 }
 
 .projects {
@@ -197,7 +197,7 @@ main {
 
 h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
     grid-column-start: 1;
     grid-column-end: span 2;
 }
@@ -231,14 +231,33 @@ h3 {
     flex-direction: column;
 }
 
-announcement {
-    padding-bottom: 10px;
+.announcement {
+    padding: 10px;
 }
 
+.announcement:first-child {
+   padding-top: 0; 
+}
 .trending {
     grid-area: trending;
+   
+}
+
+.trend .picture {
+    height: 40px;
+    width: 40px;
+}
+
+.trend {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.trend .account {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;  
+    gap: 2px;
 }
 
 
