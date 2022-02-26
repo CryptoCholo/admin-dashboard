@@ -17,7 +17,7 @@ body {
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'sidebar header'
-                        'sidebar content';
+                        'sidebar mycontent';
 }
 
 .material-icons-outlined {
@@ -39,7 +39,7 @@ body {
     padding: 1.5rem 3rem;
     grid-area: header;
     z-index: 3;
-    border: 2px solid black;
+   box-shadow: 0 5px 8px 0 rgba(211, 201, 201, 0.2), 0 8px 10px 0 rgba(167, 161, 161, 0.19);
 }
 
 .upper-header {
@@ -61,21 +61,39 @@ body {
     cursor: pointer;
 }
 
-.upper-left > #search {
+ #search {
     display: inline-block;
     border: 0;
     background-color: rgba(211, 211, 211, 0.486);
     padding: 0.75em 2em;
     margin-left: 1.25rem;
     border-radius: 99em;
-    width: min(80%, 700px);
+    width: 450px;
 }
 
 
 
 .account {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 5px;
+}
+
+.account .picture {
+    margin: 0 0.65rem 0 0.65rem;
+    height: 40px;
+    width: 40px;
+} 
+
+.picture {
+    border-radius: 50%;
+}
+button {
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
 }
 
 .lower-header {
@@ -85,18 +103,45 @@ body {
 
 .profile {
     display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.profile .picture {
+    height: 75px;
+    width: 75px;
+}
+
+.profile .greeting {
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+
+.profile .name {
+    font-size: 1.6rem;
+    font-weight: 800;
 }
 
 .buttons {
     display: flex;
-    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn {
+    background-color: maroon;
+    color: white;
+    font-weight: 500;
+    padding: 0.75em 2em;
+    border-radius: 99em;
 }
 
 .sidebar {
     display: grid;
     grid-area: sidebar;
     padding: 1.5rem 2rem;
-    border: 2px solid black;
+    border: 0px solid black;
     background-color: maroon;
     color: white;
     height: fit-content;
@@ -105,6 +150,7 @@ body {
 .sidebar-title {
     display: flex;
     align-items: center;
+    gap: 5px;
     font-size: 1.75rem;
     margin-bottom: 70px;
 }
@@ -127,10 +173,81 @@ aside > ul {
     padding: 6px;
 }
 
-.content {
-    grid-area: content;
+main {
+    background-color: rgb(226, 221, 221);
+    grid-area: mycontent;
+    padding: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto ;
-  
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'projects announcements'
+                         'projects trending';
+    gap: 1.3rem;
+    overflow: fit-content;
+    height: 86vh;
 }
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.01fr 0.2fr 0.2fr 0.2fr;
+    gap: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+.projects .card {
+    border-left: 7px solid lightcoral;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+} 
+
+.actions {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.3rem;
+    border-radius: 0.5rem;
+    box-shadow:  0 4px 6px -1px rgba(172, 170, 170, 0.1), 0 2px 4px -2px rgba(165, 161, 161, 0.1);
+}
+
+.card-text {
+    font-size: 0.7rem;
+    color: rgb(75, 75, 75);
+}
+.announcements {
+    grid-area: announcements;
+    display: flex;
+    flex-direction: column;
+}
+
+announcement {
+    padding-bottom: 10px;
+}
+
+.trending {
+    grid-area: trending;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
